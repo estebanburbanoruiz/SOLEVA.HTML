@@ -1,0 +1,118 @@
+SOLEVA
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soleva | Donde cada paso cuenta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --oro: #c5a47e;
+            --nude-fondo: #f9f5f2;
+            --crema-claro: #ffffff;
+            --texto: #2d2d2d;
+            --beige-overlay: rgba(249, 245, 242, 0.85);
+        }
+
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--nude-fondo); color: var(--texto); margin: 0; overflow-x: hidden; }
+        h1, h2, .logo-text { font-family: 'Playfair Display', serif; }
+
+        header { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: var(--crema-claro); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo-text { font-size: 2rem; letter-spacing: 2px; color: var(--texto); }
+        nav a { text-decoration: none; color: var(--texto); margin-left: 20px; font-size: 0.9rem; text-transform: uppercase; cursor: pointer; }
+
+        /* --- Hero Section con tu imagen de Drive --- */
+        .hero {
+            position: relative;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            /* Se usa la URL de visualización directa de tu imagen en Drive */
+            background: url('https://lh3.googleusercontent.com/d/17jhoG4SeQre_mJazRgS5Iz5H587HgPuu') no-repeat center center/cover;
+            padding-right: 10%;
+        }
+        
+        .hero-card { background: var(--beige-overlay); padding: 40px; max-width: 450px; border-radius: 5px; text-align: center; backdrop-filter: blur(5px); }
+        .hero-card h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        
+        .btn-cta { background: var(--oro); color: white; padding: 15px 40px; border: none; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: 0.3s; }
+        .btn-cta:hover { background: #b38f66; }
+
+        .beneficios { display: flex; justify-content: center; gap: 20px; margin-top: -50px; padding: 0 5%; z-index: 10; position: relative; }
+        .card { background: white; padding: 20px; width: 250px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-radius: 8px; }
+
+        .estilos { padding: 80px 10%; text-align: center; }
+        .grid-estilos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .estilo-item img { width: 100%; height: 400px; object-fit: cover; border-radius: 5px; }
+
+        footer { background: var(--texto); color: white; text-align: center; padding: 40px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-text">soleva</div>
+        <nav>
+            <a href="#">Colección</a>
+            <a href="#">Streaming</a>
+            <a onclick="abrirContacto()">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-card">
+            <p style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem;">Próximamente</p>
+            <h1>Gran lanzamiento</h1>
+            <button class="btn-cta">Descubre más</button>
+        </div>
+    </section>
+
+    <section class="beneficios">
+        <div class="card"><h3>Prueba virtual con IA</h3></div>
+        <div class="card"><h3>Entrega express 24-48h</h3></div>
+        <div class="card"><h3>Devolución gratuita</h3></div>
+    </section>
+
+    <section class="estilos">
+        <h2>¿Qué tipo de Soleva eres hoy?</h2>
+        <div class="grid-estilos">
+            <div class="estilo-item"><img src="https://m.media-amazon.com/images/I/71Ad6ZfGGEL._AC_UF894,1000_QL80_.jpg"></div>
+            <div class="estilo-item"><img src="https://m.media-amazon.com/images/I/61GbH4+taFL.jpg"></div>
+            <div class="estilo-item"><img src="https://image.made-in-china.com/202f0j00upGqCkeMgEgj/Stylish-Women-s-Footwear-with-Platform-Heels.webp"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Soleva. Donde cada paso cuenta.</p>
+    </footer>
+
+    <a href="https://wa.link/uklbrt" target="_blank" style="position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; border-radius: 50px; padding: 15px 25px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 9999; display: flex; align-items: center; gap: 10px;">
+        <span>WhatsApp</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="20" height="20" alt="WA">
+    </a>
+
+    <div id="modalContacto" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); backdrop-filter: blur(5px);">
+        <div style="background-color: var(--nude-fondo); margin: 10% auto; padding: 40px; border-radius: 15px; width: 90%; max-width: 400px; text-align: center; position: relative;">
+            <span onclick="cerrarContacto()" style="position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: var(--oro);">×</span>
+            <h2 style="font-family: 'Playfair Display', serif;">Contacto Soleva</h2>
+            <div style="background: white; padding: 20px; display: inline-block; border-radius: 10px; border: 1px solid var(--oro); margin: 20px 0;">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://wa.link/uklbrt" alt="QR WhatsApp" style="width: 200px;">
+            </div>
+            <p>📞 +57 2222 145 537</p>
+            <a href="https://wa.link/uklbrt" target="_blank" class="btn-cta" style="display: block; text-decoration: none; margin-top: 15px;">Escríbenos</a>
+        </div>
+    </div>
+
+    <script>
+        function abrirContacto() { document.getElementById("modalContacto").style.display = "block"; }
+        function cerrarContacto() { document.getElementById("modalContacto").style.display = "none"; }
+        window.onclick = function(event) {
+            var modal = document.getElementById("modalContacto");
+            if (event.target == modal) { modal.style.display = "none"; }
+        }
+    </script>
+</body>
+</html>
